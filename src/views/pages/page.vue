@@ -30,6 +30,33 @@
               {{item.text}}
             </li>
           </ul>
+          <img src="@/assets/img/img1.jpg" alt="">
+          <ol>
+            <li>
+              <i class="iconfont icon-zero"></i>
+              <span>0增项,标准施工</span>
+            </li>
+            <li>
+              <i class="iconfont icon-protection-fill"></i>
+              <span>杜绝外包项目</span>
+            </li>
+            <li>
+              <i class="iconfont icon-price"></i>
+              <span>装修贷款</span>
+            </li>
+          </ol>
+        </div>
+         <div class="conton_2">
+          <ul>
+            <li @click="cid1=index" v-for="(item,index) in conton1" :key="index" :class="{'big':index==cid1  }">
+              {{item.text}}
+            </li>
+          </ul>
+          <div>
+            <input type="text" name="" id="" placeholder="小区名">
+             <input type="text" name="" id="" placeholder="手机号">
+              <input type="text" name="" id="" placeholder="建筑面积">
+          </div>
         </div>
     </div>
 </template>
@@ -104,7 +131,19 @@ export default {
           text:"包施工"
         }
       ],
-      cid:0
+       conton1:[
+        {
+          text:"装修预约"
+        },
+        {
+          text:"免费上门量房"
+        },
+        {
+          text:"设计方案满意为止"
+        }
+      ],
+      cid:0,
+      cid1:0
     };
   },
   created() {}
@@ -180,6 +219,29 @@ export default {
 }
 .conton {
   border-top: 0.5rem solid #eaeaea;
+  border-bottom: 0.5rem solid #eaeaea;
+  img{
+    width: 100%;
+    height: 12rem;
+  }
+  ol{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: .72rem 0;
+    li{
+      display: flex;
+      align-items: center;
+      span{
+      font-size: 16px;
+    }
+    i{
+      color: #39c894;
+      font-size:20px;
+      margin-right: .1.5rem;
+    }
+    }
+  }
   ul{
     display: flex;
     margin: .64rem 0;
@@ -188,7 +250,40 @@ export default {
     border-left: .2rem solid #39c894;
     li{
       margin-left: .3rem;
-      font-size: 17px;
+      font-size: 15px;
+      color: #999;
+    }
+    .big{
+      font-size: 20px;
+      color: #000;
+    }
+  }
+}
+.conton_2 {
+  border-bottom: 0.5rem solid #eaeaea;
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input{
+      width: 80%;
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 5px;
+      padding-left: .3rem;
+      outline: none;
+      border: .02rem solid #eaeaea;
+    }
+  }
+  ul{
+    display: flex;
+    margin: .64rem 0;
+    height: 2rem;
+    align-items: center;
+    border-left: .2rem solid #39c894;
+    li{
+      margin-left: .3rem;
+      font-size: 15px;
       color: #999;
     }
     .big{
