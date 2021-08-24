@@ -56,6 +56,21 @@
             <input type="text" name="" id="" placeholder="小区名">
              <input type="text" name="" id="" placeholder="手机号">
               <input type="text" name="" id="" placeholder="建筑面积">
+              <button>立即申请</button>
+          </div>
+        </div>
+        <div class="conton_3">
+          <ul>
+            <li class="big'">设计师</li>
+          </ul>
+          <div>
+           <ol>
+             <li v-for="(item,index) in conton2" :key="index">
+                <img src="@/assets/img/a.jpg" alt="">
+                <span>{{item.text}}</span>
+                <span>{{item.flag}}</span>
+              </li>
+           </ol>
           </div>
         </div>
     </div>
@@ -114,36 +129,54 @@ export default {
           color: "#fe8864"
         }
       ],
-      conton:[
+      conton: [
         {
-          text:"全屋装修"
+          text: "全屋装修"
         },
         {
-          text:"包设计"
+          text: "包设计"
         },
         {
-          text:"包主材"
+          text: "包主材"
         },
         {
-          text:"包水电"
+          text: "包水电"
         },
         {
-          text:"包施工"
+          text: "包施工"
         }
       ],
-       conton1:[
+      conton1: [
         {
-          text:"装修预约"
+          text: "装修预约"
         },
         {
-          text:"免费上门量房"
+          text: "免费上门量房"
         },
         {
-          text:"设计方案满意为止"
+          text: "设计方案满意为止"
         }
       ],
-      cid:0,
-      cid1:0
+       conton2: [
+        {
+          text: "吴飞柯",
+          flag:"优秀"
+        },
+        {
+          text: "陆炎龙",
+          flag:"主任"
+        },
+        {
+          text: "张海建",
+          flag:"总监"
+        },
+        {
+          text: "陈冲",
+          flag:"优秀"
+        }
+      ],
+      cid: 0,
+      cid1: 0
     };
   },
   created() {}
@@ -176,11 +209,11 @@ export default {
       align-items: center;
       justify-content: center;
       span {
-        font-size: 20px;
+        font-size: 16px;
         color: #999;
       }
       .iconfont {
-        font-size: 22px;
+        font-size: 18px;
         color: #999999;
       }
     }
@@ -188,7 +221,7 @@ export default {
 }
 .my-swipe .van-swipe-item {
   width: 100%;
-  height: 7rem;
+  height: 8rem;
   img {
     width: 100%;
     height: 100%;
@@ -200,8 +233,8 @@ export default {
 .van-grid-item__content {
   padding: 0.3rem 0 0.4rem 0;
   .one {
-    height: 2.9rem;
-    width: 2.9rem;
+    height: 3.5rem;
+    width: 3.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -218,75 +251,134 @@ export default {
   }
 }
 .conton {
-  border-top: 0.5rem solid #eaeaea;
-  border-bottom: 0.5rem solid #eaeaea;
-  img{
+  border-top: 0.5rem solid #f4f4f4;
+  border-bottom: 0.5rem solid #f4f4f4;
+  img {
     width: 100%;
     height: 12rem;
   }
-  ol{
+  ol {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: .72rem 0;
-    li{
+    padding: 0.72rem 0;
+    li {
       display: flex;
       align-items: center;
-      span{
-      font-size: 16px;
-    }
-    i{
-      color: #39c894;
-      font-size:20px;
-      margin-right: .1.5rem;
-    }
+      span {
+        font-size: 16px;
+      }
+      i {
+        color: #39c894;
+        font-size: 20px;
+        margin-right: 0.1.5rem;
+      }
     }
   }
-  ul{
+  ul {
     display: flex;
-    margin: .64rem 0;
+    margin: 0.64rem 0;
     height: 2rem;
     align-items: center;
-    border-left: .2rem solid #39c894;
-    li{
-      margin-left: .3rem;
+    border-left: 0.2rem solid #39c894;
+    li {
+      margin-left: 0.3rem;
       font-size: 15px;
       color: #999;
     }
-    .big{
+    .big {
       font-size: 20px;
       color: #000;
     }
   }
 }
 .conton_2 {
-  border-bottom: 0.5rem solid #eaeaea;
-  div{
+  border-bottom: 0.5rem solid #f4f4f4;
+  div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    input{
+    margin: 0.72rem 0;
+    input {
       width: 80%;
       margin-top: 1rem;
-      height: 2rem;
+      height: 2.5rem;
       border-radius: 5px;
-      padding-left: .3rem;
+      padding-left: 0.3rem;
       outline: none;
-      border: .02rem solid #eaeaea;
+      border: 0.02rem solid #eaeaea;
+    }
+    button {
+      width: 80%;
+      margin-top: 1rem;
+      background: #feb505;
+      border: none;
+      outline: none;
+      color: white;
+      height: 2.5rem;
+      border-radius: 0.05rem;
     }
   }
-  ul{
+  ul {
     display: flex;
-    margin: .64rem 0;
+    margin: 0.64rem 0;
     height: 2rem;
     align-items: center;
-    border-left: .2rem solid #39c894;
-    li{
-      margin-left: .3rem;
+    border-left: 0.2rem solid #39c894;
+    li {
+      margin-left: 0.3rem;
       font-size: 15px;
       color: #999;
     }
-    .big{
+    .big {
+      font-size: 20px;
+      color: #000;
+    }
+  }
+}
+.conton_3 {
+  border-bottom: 0.5rem solid #f4f4f4;
+  div {
+    ol {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-left: none;
+      li {
+        display: flex;
+        flex-direction: column;
+        flex-direction: center;
+        align-items: center;
+        :nth-child(2){
+          margin: .5rem;
+          font-size: 20px;
+          color: #000;
+        }
+        :nth-child(3){
+          background: #39c894;
+          width: 4.8rem;
+          text-align: center;
+          height: 1.28rem;
+          border-radius: .05rem;
+          color: white;
+        }
+        img {
+          height: 3.5rem;
+          width: 3.5rem;
+          border-radius: 50%;
+        }
+        
+      }
+    }
+  }
+  ul {
+    display: flex;
+    margin: 0.64rem 0;
+    height: 2rem;
+    align-items: center;
+    border-left: 0.2rem solid #39c894;
+    li {
+      margin-left: 0.3rem;
       font-size: 20px;
       color: #000;
     }
