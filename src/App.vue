@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    我的各管三弄
   </div>
 </template>
 <script>
